@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เรียนรู้คำประสมภาษาไทย - นิทรรศการ AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Sarabun', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .animate-bounce-slow { animation: bounce 2s infinite; }
+        .quiz-option { transition: all 0.3s ease; }
+        .quiz-option:hover { transform: scale(1.02); }
+        .correct { background: linear-gradient(45deg, #10b981, #34d399); }
+        .incorrect { background: linear-gradient(45deg, #ef4444, #f87171); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">เรียนรู้คำประสมภาษาไทย</h1>
+            <p class="text-xl md:text-2xl opacity-90">นิทรรศการ AI เพื่อการศึกษา</p>
+            <div class="mt-6 flex justify-center space-x-4">
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">🤖 AI-Powered</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">📚 ม.ต้น-ม.ปลาย</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full text-sm">🎯 Interactive</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-2">
+            <div class="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-2 md:gap-4 py-3 md:py-4">
+                <button onclick="showSection('word-formation')" class="nav-btn bg-blue-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm md:text-base">🏗️ การสร้างคำ</button>
+                <button onclick="showSection('word-repetition')" class="nav-btn bg-cyan-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-cyan-600 transition-colors text-sm md:text-base">คำซ้ำ</button>
+                <button onclick="showSection('word-compound')" class="nav-btn bg-teal-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-teal-600 transition-colors text-sm md:text-base">คำซ้อน</button>
+                <button onclick="showSection('types')" class="nav-btn bg-green-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm md:text-base">คำประสม</button>
+                <button onclick="showSection('differences')" class="nav-btn bg-purple-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors text-sm md:text-base">ความแตกต่าง</button>
+                <button onclick="showSection('examples')" class="nav-btn bg-orange-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors text-sm md:text-base">ตัวอย่าง</button>
+                <button onclick="showSection('games')" class="nav-btn bg-pink-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-pink-600 transition-colors text-sm md:text-base">เกม</button>
+                <button onclick="showSection('quiz')" class="nav-btn bg-red-500 text-white px-2 md:px-4 py-2 rounded-lg hover:bg-red-600 transition-colors text-sm md:text-base">แบบทดสอบ</button>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-3 md:px-4 py-4 md:py-8">
+
+        <!-- Word Formation Section -->
+        <section id="word-formation" class="content-section">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-blue-600 mb-6 flex items-center">
+                    🏗️ การสร้างคำในภาษาไทย คืออะไร?
+                </h2>
+                
+                <div class="mb-8">
+                    <div class="bg-blue-50 p-6 rounded-xl mb-6">
+                        <h3 class="text-xl font-bold text-blue-700 mb-4">📖 ความหมายของการสร้างคำ</h3>
+                        <p class="text-lg leading-relaxed mb-4">
+                            <strong>"การสร้างคำ"</strong> (ในภาษาไทย) นั้น ตำราหรือหนังสือบางเล่มอาจเรียกว่า <strong>"การเพิ่มคำ"</strong> (ในภาษาไทย) 
+                            ซึ่งพี่ยูขอสรุปความหมายให้ว่า
+                        </p>
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500 mb-4">
+                            <p class="text-gray-700 text-lg">
+                                <strong>"การสร้างคำ"</strong> คือ การนำคำมูลตั้งแต่ 2 หน่วยคำเป็นต้นไปมาประกอบกัน 
+                                โดยทั่วไปแล้วจะเกิดเป็นคำใหม่ที่มักมีความหมายต่างไปจากคำมูลคำเดิม 
+                                เพราะเมื่อนำคำมูลคำอื่นมาประกอบเข้าด้วยกันแล้ว ก็มักต้องรวมความหมายของคำมูลเหล่านั้นประกอบกันเพื่อสื่อความหมายใหม่ด้วยนั่นเอง
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-green-700 mb-4">🤔 การสร้างคำในภาษาไทย มีกี่วิธี? อะไรบ้าง?</h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        พี่ยูขอบอกเลยว่า การสร้างคำในภาษาไทยมีเกณฑ์ที่พิจารณาการเลือกคำมูลมาประกอบกันเพื่อเรียกคำใหม่ที่สร้างขึ้นตามวิธีการสร้างคำนั้น ๆ หลายเกณฑ์ เช่น
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl">
+                            <h4 class="font-bold text-green-700 mb-2">📊 พิจารณาจากลักษณะความหมายของคำมูล</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• เหมือน / คล้าย</li>
+                                <li>• แตกต่างแต่ไม่ตรงกันข้าม</li>
+                                <li>• แตกต่างแบบตรงข้ามกัน</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl">
+                            <h4 class="font-bold text-purple-700 mb-2">🌍 พิจารณาจากที่มาของคำมูล</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• คำไทยแท้</li>
+                                <li>• คำยืมมาจากภาษาอื่น</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-6 rounded-xl">
+                        <p class="text-lg leading-relaxed mb-4">
+                            เมื่อเป็นเช่นนี้ ในภาษาไทยจึงมีวิธีการสร้างคำหรือวิธีการเพิ่มคำที่หลากหลาย 
+                            พี่ยูพบว่า การสร้างคำในภาษาไทยที่น้อง ๆ ต้องได้เรียนกัน มี <strong>4 วิธีหลัก</strong> คือ
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="bg-white p-4 rounded-lg text-center card-hover">
+                                <div class="text-3xl mb-2">🔄</div>
+                                <h4 class="font-bold text-red-600 mb-1">(1) คำซ้ำ</h4>
+                                <p class="text-sm text-gray-600">เด็กๆ, ช้าๆ</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg text-center card-hover">
+                                <div class="text-3xl mb-2">🎵</div>
+                                <h4 class="font-bold text-blue-600 mb-1">(2) คำซ้อน</h4>
+                                <p class="text-sm text-gray-600">ลิงโลด, เซ็งแซ่</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg text-center card-hover">
+                                <div class="text-3xl mb-2">🔍</div>
+                                <h4 class="font-bold text-green-600 mb-1">(3) คำประสม</h4>
+                                <p class="text-sm text-gray-600">โรงพยาบาล, ห้องเรียน</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg text-center card-hover">
+                                <div class="text-3xl mb-2">⚡</div>
+                                <h4 class="font-bold text-purple-600 mb-1">(4) คำสมาส</h4>
+                                <p class="text-sm text-gray-600">ราชบุตร, มหาชน</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Word Compound Section -->
+        <section id="word-compound" class="content-section hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-teal-600 mb-6 flex items-center">
+                    🎵 คำซ้อน
+                </h2>
+                
+                <div class="mb-8">
+                    <div class="bg-teal-50 p-6 rounded-xl mb-6">
+                        <h3 class="text-xl font-bold text-teal-700 mb-4">📖 ความหมายของคำซ้อน</h3>
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-teal-500 mb-4">
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                <strong>คำซ้อน</strong> เกิดจากการนำคำมูลที่มีความหมายเหมือนกัน / คล้ายกัน / อยู่ในกลุ่มแวดวงความหมายเดียวกัน 
+                                หรือเกิดจากการนำคำมูลที่มีความหมายตรงข้ามกัน ตั้งแต่ 2 หน่วยคำเป็นต้นไปมาประกอบกัน
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-purple-700 mb-4">🌈 ประเภทของคำซ้อน</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        คำซ้อนแบ่งออกเป็น 2 ประเภทหลัก ตามลักษณะความหมายของคำมูลที่นำมาประกอบกัน
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <!-- ก) ความหมายเหมือน/คล้าย -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ก</div>
+                                <h4 class="text-xl font-bold text-blue-700">คำมูลที่มีความหมายเหมือน / คล้าย / อยู่ในแวดวงความหมายเดียวกัน</h4>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                การนำคำที่มีความหมายใกล้เคียงกันหรืออยู่ในกลุ่มความหมายเดียวกันมาประกอบกัน
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">🔥 เดือดร้อน</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>เดือด</strong> = ร้อนจัด, โกรธ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ร้อน</strong> = ความร้อน, ความทุกข์</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสองคำมีความหมายเกี่ยวกับความทุกข์ร้อนใจ</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">😈 ชั่วร้าย</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ชั่ว</strong> = ไม่ดี, เลว</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ร้าย</strong> = ไม่ดี, อันตราย</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสองคำมีความหมายเกี่ยวกับความไม่ดี</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">👻 ภูตผีปีศาจ</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ภูต</strong> = วิญญาณ</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ผี</strong> = วิญญาณคนตาย</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ปีศาจ</strong> = สิ่งชั่วร้าย</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสามคำอยู่ในกลุ่มสิ่งเหนือธรรมชาติ</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">😢 ทุกข์โศกโรคภัย</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ทุกข์</strong> = ความเศร้า</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>โศก</strong> = ความเศร้าโศก</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>โรค</strong> = ความเจ็บป่วย</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ภัย</strong> = อันตราย</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสี่คำเกี่ยวกับความทุกข์และความเดือดร้อน</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ข) ความหมายตรงข้าม -->
+                        <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ข</div>
+                                <h4 class="text-xl font-bold text-red-700">คำมูลที่มีความหมายตรงข้ามกัน</h4>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                การนำคำที่มีความหมายตรงกันข้ามมาประกอบกัน เพื่อแสดงความหมายครอบคลุมทั้งสองด้าน
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">⚖️ ดีชั่ว</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ดี</strong> = สิ่งที่ดี</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ชั่ว</strong> = สิ่งที่ไม่ดี</p>
+                                    <p class="text-xs text-gray-500">💭 ครอบคลุมทั้งสิ่งดีและสิ่งไม่ดี</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">🔍 เท็จจริง</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>เท็จ</strong> = ไม่จริง</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>จริง</strong> = เป็นความจริง</p>
+                                    <p class="text-xs text-gray-500">💭 ครอบคลุมทั้งความจริงและความเท็จ</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">📏 ชั่วดีถี่ห่าง</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ชั่ว</strong> = ไม่ดี</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ดี</strong> = ดี</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ถี่</strong> = หนาแน่น</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ห่าง</strong> = ไกล</p>
+                                    <p class="text-xs text-gray-500">💭 ครอบคลุมทุกลักษณะและระยะห่าง</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">💀 เป็นตายร้ายดี</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>เป็น</strong> = มีชีวิต</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ตาย</strong> = สิ้นชีวิต</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ร้าย</strong> = ไม่ดี</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ดี</strong> = ดี</p>
+                                    <p class="text-xs text-gray-500">💭 ครอบคลุมทุกสถานการณ์ในชีวิต</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-green-700 mb-4">🌍 ที่มาของคำมูลในคำซ้อน</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        คำมูลแต่ละคำที่นำมาซ้อนกันอาจเป็นคำไทยแท้ (ไทยกรุงเทพฯ หรือไทยถิ่นต่าง ๆ) หรือคำยืมก็ได้
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl card-hover">
+                            <h4 class="text-lg font-bold text-green-700 mb-4">🏛️ ตัวอย่างคำซ้อนจากภาษาต่าง ๆ</h4>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-green-600 mb-2">🏠 เสื่อสาด</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>เสื่อ</strong> = ไทยกรุงเทพฯ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>สาด</strong> = ไทยถิ่นใต้หรืออีสาน</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสองคำหมายถึงสิ่งที่ใช้ปูพื้น</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-green-600 mb-2">⚔️ ศึกสงคราม</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ศึก</strong> = ไทย</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>สงคราม</strong> = สันสกฤต</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสองคำหมายถึงการรบ การต่อสู้</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-green-600 mb-2">😠 ชั่วช้าสามานย์</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ชั่ว</strong> = ไทย</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ช้า</strong> = ไทย</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>สามานย์</strong> = สันสกฤต</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสามคำหมายถึงความไม่ดี ความเลว</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-green-600 mb-2">🎯 เลือกสรร</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>เลือก</strong> = ไทย</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>สรร</strong> = เขมร</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสองคำหมายถึงการคัดเลือก</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg md:col-span-2">
+                                    <h5 class="font-bold text-green-600 mb-2">😭 โศกเศร้าเสียใจ</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>โศก</strong> = สันสกฤต</p>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>เศร้า</strong> = ไทย</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>เสียใจ</strong> = ไทย</p>
+                                    <p class="text-xs text-gray-500">💭 ทั้งสามคำหมายถึงความเศร้าโศก ความทุกข์ใจ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-teal-700 mb-4">🎯 สรุปสำคัญ</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">✅ คำซ้อนคือ</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• คำที่มีความหมายเหมือน/คล้าย</li>
+                                <li>• หรือความหมายตรงข้าม</li>
+                                <li>• นำมาประกอบกัน</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">🌟 ประเภท</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• ความหมายเหมือน/คล้าย</li>
+                                <li>• ความหมายตรงข้าม</li>
+                                <li>• จากภาษาต่าง ๆ</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">🎨 ตัวอย่าง</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• เดือดร้อน (เหมือน)</li>
+                                <li>• ดีชั่ว (ตรงข้าม)</li>
+                                <li>• ศึกสงคราม (ต่างภาษา)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Word Repetition Section -->
+        <section id="word-repetition" class="content-section hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-cyan-600 mb-6 flex items-center">
+                    🔄 คำซ้ำ
+                </h2>
+                
+                <div class="mb-8">
+                    <div class="bg-cyan-50 p-6 rounded-xl mb-6">
+                        <h3 class="text-xl font-bold text-cyan-700 mb-4">📖 ความหมายของคำซ้ำ</h3>
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-cyan-500 mb-4">
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                <strong>คำซ้ำ</strong> เกิดจากคำมูลคำเดียวกัน (ความหมาย ชนิดและหน้าที่ของคำเหมือนกัน) 
+                                ตั้งแต่ 2 หน่วยคำเป็นต้นไปมาประกอบกัน ใช้เครื่องหมายไม้ยมกแทนคำหลังที่ซ้ำ 
+                                ยกเว้นในบทร้อยกรองจะไม่นิยมใช้ไม้ยมก
+                            </p>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl">
+                                <h4 class="font-bold text-blue-700 mb-2">💡 ข้อสำคัญ</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• คำซ้ำอาจเกิดความหมายใหม่ต่างไปจากคำเดี่ยว</li>
+                                    <li>• คำซ้ำอาจมีความหมายไม่ต่างจากคำเดี่ยว</li>
+                                    <li>• จึงไม่จำเป็นต้องทำให้เป็นคำซ้ำเสมอไป</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl">
+                                <h4 class="font-bold text-green-700 mb-2">✍️ การเขียน</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• ใช้ไม้ยมก (ๆ) แทนคำหลัง</li>
+                                    <li>• เช่น เด็ก<span class="text-red-500">ๆ</span>, ช้า<span class="text-red-500">ๆ</span></li>
+                                    <li>• ในบทกวีไม่ใช้ไม้ยมก</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-purple-700 mb-4">🌈 ลักษณะทางความหมายของคำซ้ำ</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        คำซ้ำที่สร้างขึ้นอาจมีลักษณะทางความหมายได้หลากหลาย อาทิ
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <!-- ก) พหูพจน์ -->
+                        <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ก</div>
+                                <h4 class="text-xl font-bold text-red-700">มีความหมายเป็นพหูพจน์</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2"><strong>ตัวอย่าง:</strong> เด็ก<span class="text-red-500">ๆ</span> เล่นอยู่ในห้องนอน</p>
+                                <p class="text-sm text-gray-600">💭 หมายถึง เด็กหลายคน ไม่ใช่เด็กคนเดียว</p>
+                            </div>
+                        </div>
+
+                        <!-- ข) กิริยาซ้ำ -->
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ข</div>
+                                <h4 class="text-xl font-bold text-orange-700">มีความหมายแสดงกิริยาซ้ำหลายครั้ง</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2"><strong>ตัวอย่าง:</strong> แม่เคยเปรย<span class="text-red-500">ๆ</span> ว่าอยากไปเที่ยวไต้หวัน</p>
+                                <p class="text-sm text-gray-600">💭 หมายถึง พูดเป็นครั้งคราว หรือพูดซ้ำๆ</p>
+                            </div>
+                        </div>
+
+                        <!-- ค) แยกเป็นส่วน -->
+                        <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-yellow-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ค</div>
+                                <h4 class="text-xl font-bold text-yellow-700">มีความหมายแยกออกเป็นส่วนๆ หรือแยกประเภท</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2"><strong>ตัวอย่าง:</strong> เธอควรใช้ปากกาให้หมดไปเป็นด้าม<span class="text-red-500">ๆ</span> นะ</p>
+                                <p class="text-sm text-gray-600">💭 หมายถึง ใช้ทีละด้าม แยกเป็นส่วนๆ</p>
+                            </div>
+                        </div>
+
+                        <!-- ง) เน้นหนัก -->
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ง</div>
+                                <h4 class="text-xl font-bold text-green-700">มีความหมายเน้นหนัก</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2"><strong>ตัวอย่าง:</strong> หมูปิ้งของฉันขอแต่เนื้อ<span class="text-red-500">ๆ</span> นะคะ ไม่ชอบมันค่ะ</p>
+                                <p class="text-sm text-gray-600">💭 หมายถึง เน้นว่าต้องการแต่เนื้อ ไม่ต้องการส่วนอื่น</p>
+                            </div>
+                        </div>
+
+                        <!-- จ) เบาลง -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">จ</div>
+                                <h4 class="text-xl font-bold text-blue-700">มีความหมายเบาลง</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2"><strong>ตัวอย่าง:</strong> ผ่านมาหลายวัน เธอยังโกรธ<span class="text-red-500">ๆ</span> เขาไม่หายใช่ไหม</p>
+                                <p class="text-sm text-gray-600">💭 หมายถึง โกรธเล็กน้อย ไม่ได้โกรธมาก</p>
+                            </div>
+                        </div>
+
+                        <!-- ฉ) ไม่ชี้เฉพาะ -->
+                        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ฉ</div>
+                                <h4 class="text-xl font-bold text-indigo-700">มีความหมายไม่ชี้เฉพาะเจาะจง</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2"><strong>ตัวอย่าง:</strong> วันพรุ่งนี้เจอกันแถว<span class="text-red-500">ๆ</span> โรงพยาบาลละกัน</p>
+                                <p class="text-sm text-gray-600">💭 หมายถึง บริเวณใกล้ๆ โรงพยาบาล ไม่ได้ระบุจุดแน่นอน</p>
+                            </div>
+                        </div>
+
+                        <!-- ช) ความหมายใหม่ -->
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-purple-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">ช</div>
+                                <h4 class="text-xl font-bold text-purple-700">มีความหมายใหม่หรือกลายเป็นสำนวน</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2"><strong>ตัวอย่าง:</strong> เขามีความรู้แค่งู<span class="text-red-500">ๆ</span> ปลา<span class="text-red-500">ๆ</span> อย่าไปเค้นเอาความลุ่มลึกเลย</p>
+                                <p class="text-sm text-gray-600">💭 หมายถึง มีความรู้เพียงเล็กน้อย ไม่ลึกซึ้ง (เป็นสำนวน)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-cyan-700 mb-4">🎯 สรุปสำคัญ</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">✅ คำซ้ำคือ</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• คำเดียวกันซ้ำกัน</li>
+                                <li>• ใช้ไม้ยมก (ๆ)</li>
+                                <li>• มีความหมายหลากหลาย</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">🎨 ตัวอย่างเพิ่มเติม</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• ช้า<span class="text-red-500">ๆ</span> (ช้ามาก)</li>
+                                <li>• ใหญ่<span class="text-red-500">ๆ</span> (ใหญ่มาก)</li>
+                                <li>• คน<span class="text-red-500">ๆ</span> (หลายคน)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types Section -->
+        <section id="types" class="content-section hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-green-600 mb-6 flex items-center">
+                    🔍 คำประสม
+                </h2>
+                
+                <div class="mb-8">
+                    <div class="bg-green-50 p-6 rounded-xl mb-6">
+                        <h3 class="text-xl font-bold text-green-700 mb-4">📖 ความหมายของคำประสม</h3>
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-green-500 mb-4">
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                <strong>คำประสม</strong> เกิดจากการนำคำมูลที่มีความหมายต่างกันแต่ไม่ตรงข้ามกัน 
+                                ตั้งแต่ 2 หน่วยคำเป็นต้นไปมาประกอบกัน
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl mb-4">
+                            <h4 class="font-bold text-blue-700 mb-2">🎯 ลักษณะของคำประสม</h4>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                คำประสมที่สร้างขึ้นจะเกิดเป็นคำใหม่ซึ่งมีความหมายใหม่ แต่ยังคงเค้าความหมายของคำมูลแต่ละคำที่นำมาประกอบกัน 
+                                หรือเกิดเป็นคำใหม่ที่มีความหมายใหม่แบบไม่เหลือเค้าเดิมของความหมายคำมูลแต่ละคำที่นำมาประกอบกันก็ได้
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-blue-700 mb-4">🏗️ โครงสร้างคำประสม</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        การพิจารณาโครงสร้างคำประสม มักพิจารณาจากชนิดของคำมูลแต่ละคำที่นำมาประกอบกัน
+                    </p>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl mb-6">
+                        <h4 class="text-lg font-bold text-purple-700 mb-4">📝 ตัวอย่างโครงสร้าง</h4>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-lg card-hover">
+                                <h5 class="font-bold text-purple-600 mb-2">🌊 แม่น้ำ</h5>
+                                <p class="text-sm text-gray-600 mb-1"><strong>แม่</strong> (นาม) = ต้นกำเนิด</p>
+                                <p class="text-sm text-gray-600 mb-2"><strong>น้ำ</strong> (นาม) = สายน้ำ</p>
+                                <p class="text-xs text-gray-500">💭 สายน้ำสายหลัก</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg card-hover">
+                                <h5 class="font-bold text-purple-600 mb-2">⚔️ แม่ทัพ</h5>
+                                <p class="text-sm text-gray-600 mb-1"><strong>แม่</strong> (นาม) = หัวหน้า</p>
+                                <p class="text-sm text-gray-600 mb-2"><strong>ทัพ</strong> (นาม) = กองทหาร</p>
+                                <p class="text-xs text-gray-500">💭 ผู้บัญชาการทหาร</p>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg card-hover">
+                                <h5 class="font-bold text-purple-600 mb-2">🤱 แม่นม</h5>
+                                <p class="text-sm text-gray-600 mb-1"><strong>แม่</strong> (นาม) = ผู้หญิง</p>
+                                <p class="text-sm text-gray-600 mb-2"><strong>นม</strong> (นาม) = นมแม่</p>
+                                <p class="text-xs text-gray-500">💭 ผู้หญิงที่ให้นมลูก</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">🌟 ประเภทของคำประสม</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        คำประสมสามารถแบ่งออกได้ตามลักษณะความหมายที่เกิดขึ้นหลังจากการประกอบกัน
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <!-- ความหมายตรงตัว -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="text-4xl mr-4">🎯</div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-blue-700">ความหมายตรงตัว</h4>
+                                    <p class="text-gray-700">ความหมายของคำประสมตรงกับความหมายของคำที่นำมาประกอบ</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">🍽️ โต๊ะอาหาร</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>โต๊ะ</strong> = เฟอร์นิเจอร์</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>อาหาร</strong> = สิ่งที่กิน</p>
+                                    <p class="text-xs text-gray-500">💭 โต๊ะสำหรับวางอาหาร</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">🏫 ห้องเรียน</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ห้อง</strong> = พื้นที่</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>เรียน</strong> = ศึกษา</p>
+                                    <p class="text-xs text-gray-500">💭 ห้องสำหรับเรียนหนังสือ</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">🏥 โรงพยาบาล</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>โรง</strong> = อาคาร</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>พยาบาล</strong> = รักษา</p>
+                                    <p class="text-xs text-gray-500">💭 สถานที่รักษาพยาบาล</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-blue-600 mb-2">🚊 รถไฟฟ้า</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>รถไฟ</strong> = ยานพาหนะ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ฟ้า</strong> = ไฟฟ้า</p>
+                                    <p class="text-xs text-gray-500">💭 รถไฟที่ใช้พลังงานไฟฟ้า</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ความหมายใหม่ -->
+                        <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="text-4xl mr-4">✨</div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-red-700">ความหมายใหม่</h4>
+                                    <p class="text-gray-700">ความหมายของคำประสมแตกต่างจากคำเดิม ไม่เหลือเค้าเดิม</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">😠 ใจดำ</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ใจ</strong> = หัวใจ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ดำ</strong> = สีดำ</p>
+                                    <p class="text-xs text-gray-500">💭 มีใจร้าย ไม่ใช่ใจสีดำ</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">😤 หน้าไฟ</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>หน้า</strong> = ใบหน้า</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ไฟ</strong> = เปลวไฟ</p>
+                                    <p class="text-xs text-gray-500">💭 โกรธมาก ไม่ใช่หน้าที่มีไฟ</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">💚 ใจเขียว</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ใจ</strong> = หัวใจ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>เขียว</strong> = สีเขียว</p>
+                                    <p class="text-xs text-gray-500">💭 อิจฉา ไม่ใช่ใจสีเขียว</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-red-600 mb-2">🔥 หัวร้อน</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>หัว</strong> = ศีรษะ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ร้อน</strong> = ความร้อน</p>
+                                    <p class="text-xs text-gray-500">💭 โมโหง่าย ไม่ใช่หัวที่ร้อน</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- เชิงวรรณกรรม -->
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="text-4xl mr-4">📚</div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-purple-700">เชิงวรรณกรรม</h4>
+                                    <p class="text-gray-700">คำประสมที่ใช้ในงานเขียนเชิงศิลปะ มีความไพเราะ</p>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-purple-600 mb-2">☀️ แสงแดด</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>แสง</strong> = ความสว่าง</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>แดด</strong> = แสงอาทิตย์</p>
+                                    <p class="text-xs text-gray-500">💭 แสงอาทิตย์ (ใช้ในบทกวี)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-purple-600 mb-2">💨 ลมหายใจ</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>ลม</strong> = อากาศ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>หายใจ</strong> = การหายใจ</p>
+                                    <p class="text-xs text-gray-500">💭 การหายใจ (ใช้ในวรรณกรรม)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-purple-600 mb-2">🌙 แสงจันทร์</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>แสง</strong> = ความสว่าง</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>จันทร์</strong> = ดวงจันทร์</p>
+                                    <p class="text-xs text-gray-500">💭 แสงจากดวงจันทร์ (ใช้ในบทกวี)</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded-lg">
+                                    <h5 class="font-bold text-purple-600 mb-2">🌊 คลื่นลม</h5>
+                                    <p class="text-sm text-gray-600 mb-1"><strong>คลื่น</strong> = คลื่นน้ำ</p>
+                                    <p class="text-sm text-gray-600 mb-2"><strong>ลม</strong> = อากาศ</p>
+                                    <p class="text-xs text-gray-500">💭 คลื่นที่เกิดจากลม (ใช้ในวรรณกรรม)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-green-700 mb-4">🎯 สรุปสำคัญ</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">✅ คำประสมคือ</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• คำที่มีความหมายต่างกัน</li>
+                                <li>• แต่ไม่ตรงข้ามกัน</li>
+                                <li>• นำมาประกอบกัน</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">🌟 ประเภท</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• ความหมายตรงตัว</li>
+                                <li>• ความหมายใหม่</li>
+                                <li>• เชิงวรรณกรรม</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg">
+                            <h4 class="font-bold text-gray-700 mb-2">🎨 ตัวอย่าง</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• โรงพยาบาล (ตรงตัว)</li>
+                                <li>• ใจดำ (ความหมายใหม่)</li>
+                                <li>• แสงแดด (วรรณกรรม)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differences Section -->
+        <section id="differences" class="content-section hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-purple-600 mb-6 flex items-center">
+                    ⚖️ ความแตกต่างระหว่างคำประสม คำซ้ำ คำซ้อน และวลี
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-4">🔤</div>
+                        <h3 class="text-xl font-bold text-red-700 mb-3">คำประสม</h3>
+                        <p class="text-sm text-gray-700 mb-3">คำที่เกิดจากการนำคำ 2 คำขึ้นไปมาประกอบกัน</p>
+                        <div class="bg-white p-3 rounded-lg">
+                            <strong>ตัวอย่าง:</strong><br>
+                            • กระเป๋านักเรียน<br>
+                            • รถไฟฟ้า<br>
+                            • โรงพยาบาล
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-4">🔄</div>
+                        <h3 class="text-xl font-bold text-blue-700 mb-3">คำซ้ำ</h3>
+                        <p class="text-sm text-gray-700 mb-3">คำที่เกิดจากการนำคำเดียวกันมาซ้ำ</p>
+                        <div class="bg-white p-3 rounded-lg">
+                            <strong>ตัวอย่าง:</strong><br>
+                            • เด็กๆ<br>
+                            • ช้าๆ<br>
+                            • ใหญ่ๆ
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-4">🎵</div>
+                        <h3 class="text-xl font-bold text-green-700 mb-3">คำซ้อน</h3>
+                        <p class="text-sm text-gray-700 mb-3">คำที่มีเสียงคล้ายกันแต่ความหมายต่างกัน</p>
+                        <div class="bg-white p-3 rounded-lg">
+                            <strong>ตัวอย่าง:</strong><br>
+                            • ลิงโลด<br>
+                            • เซ็งแซ่<br>
+                            • ปั่นป่วน
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl card-hover">
+                        <div class="text-4xl mb-4">📝</div>
+                        <h3 class="text-xl font-bold text-yellow-700 mb-3">วลี</h3>
+                        <p class="text-sm text-gray-700 mb-3">กลุ่มคำที่มีความหมายสมบูรณ์แต่เขียนแยกกัน</p>
+                        <div class="bg-white p-3 rounded-lg">
+                            <strong>ตัวอย่าง:</strong><br>
+                            • นักเรียน ดี<br>
+                            • รถ สีแดง<br>
+                            • บ้าน หลังใหญ่
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section id="examples" class="content-section hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-orange-600 mb-6 flex items-center">
+                    🏠 ตัวอย่างคำประสมในชีวิตประจำวัน
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl card-hover">
+                        <div class="text-6xl mb-4 text-center">🏥</div>
+                        <h3 class="text-xl font-bold text-blue-700 text-center mb-3">โรงพยาบาล</h3>
+                        <p class="text-center text-gray-700">โรง + พยาบาล</p>
+                        <p class="text-sm text-center text-gray-600 mt-2">สถานที่รักษาคนไข้</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl card-hover">
+                        <div class="text-6xl mb-4 text-center">🍽️</div>
+                        <h3 class="text-xl font-bold text-green-700 text-center mb-3">โต๊ะอาหาร</h3>
+                        <p class="text-center text-gray-700">โต๊ะ + อาหาร</p>
+                        <p class="text-sm text-center text-gray-600 mt-2">โต๊ะสำหรับรับประทานอาหาร</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl card-hover">
+                        <div class="text-6xl mb-4 text-center">🏫</div>
+                        <h3 class="text-xl font-bold text-purple-700 text-center mb-3">ห้องเรียน</h3>
+                        <p class="text-center text-gray-700">ห้อง + เรียน</p>
+                        <p class="text-sm text-center text-gray-600 mt-2">ห้องสำหรับเรียนหนังสือ</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl card-hover">
+                        <div class="text-6xl mb-4 text-center">🚑</div>
+                        <h3 class="text-xl font-bold text-red-700 text-center mb-3">รถพยาบาล</h3>
+                        <p class="text-center text-gray-700">รถ + พยาบาล</p>
+                        <p class="text-sm text-center text-gray-600 mt-2">รถสำหรับส่งคนไข้</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl card-hover">
+                        <div class="text-6xl mb-4 text-center">🎒</div>
+                        <h3 class="text-xl font-bold text-yellow-700 text-center mb-3">กระเป๋านักเรียน</h3>
+                        <p class="text-center text-gray-700">กระเป๋า + นักเรียน</p>
+                        <p class="text-sm text-center text-gray-600 mt-2">กระเป๋าใส่หนังสือของนักเรียน</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl card-hover">
+                        <div class="text-6xl mb-4 text-center">🚊</div>
+                        <h3 class="text-xl font-bold text-pink-700 text-center mb-3">รถไฟฟ้า</h3>
+                        <p class="text-center text-gray-700">รถไฟ + ฟ้า</p>
+                        <p class="text-sm text-center text-gray-600 mt-2">รถไฟที่ใช้พลังงานไฟฟ้า</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="content-section hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-pink-600 mb-6 flex items-center">
+                    🎮 เกมการเรียนรู้คำประสม
+                </h2>
+                
+                <!-- Word Matching Game -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-blue-600 mb-4">🎯 เกมจับคู่คำ</h3>
+                    <div class="bg-blue-50 p-4 md:p-6 rounded-xl">
+                        <p class="mb-4 text-sm md:text-base text-gray-700">ลากคำจากด้านซ้ายไปจับคู่กับคำด้านขวาให้เป็นคำประสม</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                            <div>
+                                <h4 class="font-bold mb-3 text-blue-700 text-sm md:text-base">คำที่ 1:</h4>
+                                <div class="space-y-2" id="leftWords">
+                                    <div class="word-item bg-white p-2 md:p-3 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors text-sm md:text-base text-center" draggable="true" data-word="เรียน">เรียน</div>
+                                    <div class="word-item bg-white p-2 md:p-3 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors text-sm md:text-base text-center" draggable="true" data-word="พยาบาล">พยาบาล</div>
+                                    <div class="word-item bg-white p-2 md:p-3 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors text-sm md:text-base text-center" draggable="true" data-word="ฟ้า">ฟ้า</div>
+                                    <div class="word-item bg-white p-2 md:p-3 rounded-lg cursor-pointer hover:bg-blue-100 transition-colors text-sm md:text-base text-center" draggable="true" data-word="นักเรียน">นักเรียน</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-3 text-blue-700 text-sm md:text-base">คำที่ 2:</h4>
+                                <div class="space-y-2" id="rightWords">
+                                    <div class="drop-zone bg-gray-100 p-2 md:p-3 rounded-lg border-2 border-dashed border-gray-300 min-h-[40px] md:min-h-[50px] flex items-center justify-center text-sm md:text-base" data-target="กระเป๋า">กระเป๋า</div>
+                                    <div class="drop-zone bg-gray-100 p-2 md:p-3 rounded-lg border-2 border-dashed border-gray-300 min-h-[40px] md:min-h-[50px] flex items-center justify-center text-sm md:text-base" data-target="รถไฟ">รถไฟ</div>
+                                    <div class="drop-zone bg-gray-100 p-2 md:p-3 rounded-lg border-2 border-dashed border-gray-300 min-h-[40px] md:min-h-[50px] flex items-center justify-center text-sm md:text-base" data-target="โรง">โรง</div>
+                                    <div class="drop-zone bg-gray-100 p-2 md:p-3 rounded-lg border-2 border-dashed border-gray-300 min-h-[40px] md:min-h-[50px] flex items-center justify-center text-sm md:text-base" data-target="ห้อง">ห้อง</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex flex-col sm:flex-row gap-2">
+                            <button onclick="checkMatching()" class="bg-blue-500 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm md:text-base">ตรวจคำตอบ</button>
+                            <button onclick="resetMatching()" class="bg-gray-500 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors text-sm md:text-base">เริ่มใหม่</button>
+                        </div>
+                        <div id="matchingResult" class="mt-4"></div>
+                    </div>
+                </div>
+
+                <!-- Word Creation Game -->
+                <div class="mb-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-green-600 mb-4">✨ เกมสร้างคำใหม่</h3>
+                    <div class="bg-green-50 p-4 md:p-6 rounded-xl">
+                        <p class="mb-4 text-sm md:text-base text-gray-700">กดปุ่มเพื่อสุ่มคำ แล้วลองสร้างคำประสมจากคำที่ได้</p>
+                        <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                            <button onclick="generateRandomWord()" class="bg-green-500 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm md:text-base">🎲 สุ่มคำ</button>
+                            <div class="flex items-center justify-center sm:justify-start space-x-2">
+                                <span class="text-sm md:text-lg font-medium">คำฐาน:</span>
+                                <span id="randomWord1" class="bg-white px-3 md:px-4 py-2 rounded-lg font-bold text-green-600 text-lg md:text-xl min-w-[80px] text-center">-</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="text" id="userCompound" placeholder="พิมพ์คำประสมที่สร้างจากคำฐาน..." class="flex-1 p-2 md:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm md:text-base">
+                            <button onclick="checkUserCompound()" class="bg-green-500 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-green-600 transition-colors text-sm md:text-base whitespace-nowrap">ตรวจสอบ</button>
+                        </div>
+                        <div id="compoundResult" class="mt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="content-section hidden">
+            <div class="bg-white rounded-2xl shadow-xl p-4 md:p-8 mb-6 md:mb-8">
+                <h2 class="text-3xl font-bold text-red-600 mb-6 flex items-center">
+                    📝 แบบทดสอบคำประสม (20 ข้อ)
+                </h2>
+                <div id="quizContainer">
+                    <div class="mb-4 md:mb-6">
+                        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 md:mb-4 gap-2">
+                            <span class="text-base md:text-lg font-semibold text-center sm:text-left">ข้อที่ <span id="currentQuestion">1</span> / 20</span>
+                            <span class="text-base md:text-lg text-center sm:text-right">คะแนน: <span id="score">0</span></span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                            <div id="progressBar" class="bg-red-500 h-2 rounded-full transition-all duration-300" style="width: 5%"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="questionContainer" class="mb-4 md:mb-6">
+                        <h3 id="questionText" class="text-lg md:text-xl font-semibold mb-3 md:mb-4"></h3>
+                        <div id="optionsContainer" class="space-y-2 md:space-y-3"></div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 sm:justify-between">
+                        <button onclick="startQuiz()" id="startBtn" class="bg-red-500 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-red-600 transition-colors text-sm md:text-base">เริ่มทำแบบทดสอบ</button>
+                        <button onclick="nextQuestion()" id="nextBtn" class="bg-blue-500 text-white px-4 md:px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors text-sm md:text-base hidden">ข้อถัดไป</button>
+                    </div>
+                    
+                    <div id="quizResult" class="mt-4 md:mt-6 hidden"></div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">🎓 สรุปการเรียนรู้</h3>
+            <div class="grid md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white/10 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">🏗️</div>
+                    <h4 class="font-bold mb-2">การสร้างคำ</h4>
+                    <p class="text-sm">เรียนรู้ 4 วิธีการสร้างคำในภาษาไทย</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">🔄</div>
+                    <h4 class="font-bold mb-2">คำซ้ำ คำซ้อน</h4>
+                    <p class="text-sm">ทำความเข้าใจความแตกต่างและตัวอย่าง</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">🎮</div>
+                    <h4 class="font-bold mb-2">เรียนรู้ผ่านเกม</h4>
+                    <p class="text-sm">เกมจับคู่และสร้างคำใหม่</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-lg">
+                    <div class="text-3xl mb-2">📝</div>
+                    <h4 class="font-bold mb-2">ทดสอบความรู้</h4>
+                    <p class="text-sm">แบบทดสอบ 20 ข้อเพื่อประเมินความเข้าใจ</p>
+                </div>
+            </div>
+            <p class="text-lg opacity-90">🌟 นิทรรศการการเรียนรู้ - เรียนรู้คำประสมภาษาไทยอย่างสนุกสนาน</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('ring-2', 'ring-white');
+            });
+            event.target.classList.add('ring-2', 'ring-white');
+        }
+
+        // Word Matching Game
+        let draggedElement = null;
+        let matchingPairs = {
+            'นักเรียน': 'กระเป๋า',
+            'ฟ้า': 'รถไฟ',
+            'พยาบาล': 'โรง',
+            'เรียน': 'ห้อง'
+        };
+
+        // Initialize drag and drop
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDragAndDrop();
+        });
+
+        function initializeDragAndDrop() {
+            const wordItems = document.querySelectorAll('.word-item');
+            const dropZones = document.querySelectorAll('.drop-zone');
+
+            wordItems.forEach(item => {
+                item.addEventListener('dragstart', function(e) {
+                    draggedElement = this;
+                    this.style.opacity = '0.5';
+                });
+
+                item.addEventListener('dragend', function(e) {
+                    this.style.opacity = '1';
+                });
+            });
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.classList.add('bg-blue-100');
+                });
+
+                zone.addEventListener('dragleave', function(e) {
+                    this.classList.remove('bg-blue-100');
+                });
+
+                zone.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('bg-blue-100');
+                    
+                    if (draggedElement) {
+                        const draggedWord = draggedElement.dataset.word;
+                        const targetWord = this.dataset.target;
+                        
+                        // Allow any word to be dropped, store the pairing
+                        this.innerHTML = `<span class="font-bold">${draggedWord} + ${targetWord}</span>`;
+                        this.dataset.droppedWord = draggedWord;
+                        this.classList.add('bg-blue-50', 'border-blue-300');
+                        draggedElement.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        function checkMatching() {
+            const dropZones = document.querySelectorAll('.drop-zone');
+            let correct = 0;
+            let total = 0;
+            let details = [];
+
+            dropZones.forEach(zone => {
+                if (zone.innerHTML.includes('+')) {
+                    total++;
+                    const droppedWord = zone.dataset.droppedWord;
+                    const targetWord = zone.dataset.target;
+                    
+                    if (matchingPairs[droppedWord] === targetWord) {
+                        correct++;
+                        zone.innerHTML = `<span class="text-green-600 font-bold">${droppedWord} + ${targetWord}</span>`;
+                        zone.classList.remove('bg-blue-50', 'border-blue-300');
+                        zone.classList.add('bg-green-100', 'border-green-300');
+                        details.push(`✅ ${droppedWord} + ${targetWord} = ${droppedWord}${targetWord} (ถูกต้อง)`);
+                    } else {
+                        zone.innerHTML = `<span class="text-red-600 font-bold">${droppedWord} + ${targetWord}</span>`;
+                        zone.classList.remove('bg-blue-50', 'border-blue-300');
+                        zone.classList.add('bg-red-100', 'border-red-300');
+                        details.push(`❌ ${droppedWord} + ${targetWord} (ผิด - ควรเป็น ${Object.keys(matchingPairs).find(key => matchingPairs[key] === targetWord)} + ${targetWord})`);
+                    }
+                }
+            });
+
+            const result = document.getElementById('matchingResult');
+            if (total === 0) {
+                result.innerHTML = '<div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded">กรุณาลากคำมาจับคู่ก่อน</div>';
+            } else {
+                const percentage = Math.round((correct / 4) * 100);
+                result.innerHTML = `
+                    <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded">
+                        <strong>ผลลัพธ์:</strong> ถูก ${correct} จาก 4 คู่ (${percentage}%)
+                        ${percentage === 100 ? ' 🎉 ยอดเยี่ยม!' : percentage >= 75 ? ' 👍 ดีมาก!' : ' 💪 ลองใหม่อีกครั้ง!'}
+                        <div class="mt-3 text-sm">
+                            ${details.join('<br>')}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function resetMatching() {
+            const dropZones = document.querySelectorAll('.drop-zone');
+            const wordItems = document.querySelectorAll('.word-item');
+            
+            dropZones.forEach(zone => {
+                zone.innerHTML = zone.dataset.target;
+                zone.className = 'drop-zone bg-gray-100 p-3 rounded-lg border-2 border-dashed border-gray-300 min-h-[50px] flex items-center';
+                zone.removeAttribute('data-dropped-word');
+            });
+            
+            wordItems.forEach(item => {
+                item.style.display = 'block';
+            });
+            
+            document.getElementById('matchingResult').innerHTML = '';
+        }
+
+        // Word Creation Game
+        const singleWords = [
+            'กระเป๋า', 'รถไฟ', 'โรง', 'ห้อง', 'โต๊ะ', 'รถ', 'น้ำ', 'ไฟ',
+            'หนัง', 'เสื้อ', 'บ้าน', 'ลูก', 'แสง', 'ลม', 'ใจ', 'หน้า',
+            'เครื่อง', 'นาฬิกา', 'โทร', 'เก้า', 'ผม', 'ตา', 'หู', 'มือ'
+        ];
+
+        const validCompounds = {
+            'กระเป๋า': ['กระเป๋านักเรียน', 'กระเป๋าเดินทาง', 'กระเป๋าสตางค์', 'กระเป๋าหนังสือ'],
+            'รถไฟ': ['รถไฟฟ้า', 'รถไฟใต้ดิน', 'รถไฟด่วน'],
+            'โรง': ['โรงพยาบาล', 'โรงเรียน', 'โรงงาน', 'โรงแรม', 'โรงหนัง'],
+            'ห้อง': ['ห้องเรียน', 'ห้องนอน', 'ห้องน้ำ', 'ห้องครัว', 'ห้องนั่งเล่น'],
+            'โต๊ะ': ['โต๊ะอาหาร', 'โต๊ะเขียนหนังสือ', 'โต๊ะทำงาน'],
+            'รถ': ['รถพยาบาล', 'รถไฟ', 'รถบัส', 'รถแท็กซี่'],
+            'น้ำ': ['น้ำแข็ง', 'น้ำผลไม้', 'น้ำดื่ม'],
+            'ไฟ': ['ไฟฟ้า', 'ไฟแดง', 'ไฟเขียว'],
+            'หนัง': ['หนังสือ', 'หนังสัตว์'],
+            'เสื้อ': ['เสื้อผ้า', 'เสื้อกันหนาว'],
+            'บ้าน': ['บ้านเรือน', 'บ้านพัก'],
+            'ลูก': ['ลูกบอล', 'ลูกไม้'],
+            'แสง': ['แสงแดด', 'แสงไฟ'],
+            'ลม': ['ลมหายใจ', 'ลมแรง'],
+            'ใจ': ['ใจดำ', 'ใจดี', 'ใจกว้าง'],
+            'หน้า': ['หน้าไฟ', 'หน้าตา', 'หน้าบ้าน'],
+            'เครื่อง': ['เครื่องบิน', 'เครื่องคอมพิวเตอร์'],
+            'นาฬิกา': ['นาฬิกาข้อมือ', 'นาฬิกาแขวน'],
+            'โทร': ['โทรศัพท์', 'โทรทัศน์'],
+            'เก้า': ['เก้าอี้'],
+            'ผม': ['ผมหงอก'],
+            'ตา': ['ตาแดง'],
+            'หู': ['หูหนวก'],
+            'มือ': ['มือปืน']
+        };
+
+        function generateRandomWord() {
+            const randomWord = singleWords[Math.floor(Math.random() * singleWords.length)];
+            document.getElementById('randomWord1').textContent = randomWord;
+            document.getElementById('randomWord2').textContent = '';
+            document.getElementById('userCompound').value = '';
+            document.getElementById('compoundResult').innerHTML = '';
+        }
+
+        function checkUserCompound() {
+            const baseWord = document.getElementById('randomWord1').textContent;
+            const userInput = document.getElementById('userCompound').value.trim();
+            
+            const result = document.getElementById('compoundResult');
+            
+            if (!userInput) {
+                result.innerHTML = '<div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded">กรุณาพิมพ์คำประสมที่คิดได้</div>';
+                return;
+            }
+            
+            // Check if the input contains the base word
+            if (!userInput.includes(baseWord)) {
+                result.innerHTML = `
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                        <strong>❌ คำที่พิมพ์ไม่มีคำ "${baseWord}" อยู่ในนั้น</strong><br>
+                        💡 ลองสร้างคำประสมที่มีคำ "${baseWord}" เป็นส่วนประกอบ
+                    </div>
+                `;
+                return;
+            }
+            
+            // Check if it's a valid compound word
+            const possibleCompounds = validCompounds[baseWord] || [];
+            const isValidCompound = possibleCompounds.includes(userInput);
+            
+            if (isValidCompound) {
+                result.innerHTML = `
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                        <strong>✅ ยอดเยี่ยม! "${userInput}" เป็นคำประสม</strong><br>
+                        🎯 คำฐาน: <strong>${baseWord}</strong><br>
+                        💡 ความหมาย: ${getCompoundMeaning(userInput)}<br>
+                        🏆 คุณสร้างคำประสมได้ถูกต้อง!
+                    </div>
+                `;
+            } else {
+                // Check if it could be a compound word (basic analysis)
+                const isLikelyCompound = userInput.length > baseWord.length && userInput !== baseWord;
+                
+                if (isLikelyCompound) {
+                    result.innerHTML = `
+                        <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded">
+                            <strong>🤔 "${userInput}" อาจเป็นคำประสมได้</strong><br>
+                            🎯 คำฐาน: <strong>${baseWord}</strong><br>
+                            💭 แม้ว่าจะไม่ใช่คำประสมที่พบบ่อย แต่การสร้างคำใหม่ก็เป็นสิ่งที่น่าสนใจ!<br>
+                            💡 คำประสมที่พบบ่อยจากคำ "${baseWord}": ${possibleCompounds.slice(0, 3).join(', ')}
+                        </div>
+                    `;
+                } else {
+                    result.innerHTML = `
+                        <div class="bg-orange-100 border border-orange-400 text-orange-700 px-4 py-3 rounded">
+                            <strong>🤷‍♂️ "${userInput}" ไม่ใช่คำประสมที่รู้จัก</strong><br>
+                            🎯 คำฐาน: <strong>${baseWord}</strong><br>
+                            💡 ลองคำประสมเหล่านี้: ${possibleCompounds.slice(0, 3).join(', ')}<br>
+                            🔄 หรือกดสุ่มคำใหม่เพื่อลองอีกครั้ง
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        function getCompoundMeaning(compound) {
+            const meanings = {
+                'กระเป๋านักเรียน': 'กระเป๋าที่นักเรียนใช้ใส่หนังสือ',
+                'รถไฟฟ้า': 'รถไฟที่ใช้พลังงานไฟฟ้า',
+                'โรงพยาบาล': 'สถานที่รักษาพยาบาล',
+                'ห้องเรียน': 'ห้องสำหรับเรียนหนังสือ',
+                'โต๊ะอาหาร': 'โต๊ะสำหรับรับประทานอาหาร',
+                'รถพยาบาล': 'รถสำหรับส่งคนไข้',
+                'น้ำแข็ง': 'น้ำที่แข็งตัว',
+                'ไฟฟ้า': 'พลังงานไฟฟ้า',
+                'หนังสือ': 'สิ่งที่ใช้อ่าน',
+                'เสื้อผ้า': 'เครื่องแต่งกาย',
+                'บ้านเรือน': 'ที่อยู่อาศัย',
+                'ลูกบอล': 'บอลสำหรับเล่น'
+            };
+            return meanings[compound] || 'คำประสมที่น่าสนใจ';
+        }
+
+        // Quiz System
+        const quizQuestions = [
+            {
+                question: "คำใดต่อไปนี้เป็นคำประสม?",
+                options: ["กระเป๋านักเรียน", "นักเรียนดี", "เด็กๆ", "ลิงโลด"],
+                correct: 0
+            },
+            {
+                question: "'รถไฟฟ้า' เป็นคำประสมประเภทใด?",
+                options: ["ความหมายตรงตัว", "ความหมายใหม่", "เชิงวรรณกรรม", "คำซ้ำ"],
+                correct: 0
+            },
+            {
+                question: "คำใดไม่ใช่คำประสม?",
+                options: ["โรงพยาบาล", "ห้องเรียน", "เด็กๆ", "โต๊ะอาหาร"],
+                correct: 2
+            },
+            {
+                question: "'ใจดำ' เป็นคำประสมประเภทใด?",
+                options: ["ความหมายตรงตัว", "ความหมายใหม่", "เชิงวรรณกรรม", "คำซ้อน"],
+                correct: 1
+            },
+            {
+                question: "คำประสมคือ?",
+                options: ["คำที่เขียนแยกกัน", "คำที่ประกอบจาก 2 คำขึ้นไป", "คำที่มีเสียงเดียว", "คำที่ซ้ำกัน"],
+                correct: 1
+            },
+            {
+                question: "'หน้าไฟ' หมายถึงอะไร?",
+                options: ["หน้าที่มีไฟ", "โกรธมาก", "หน้าสว่าง", "หน้าแดง"],
+                correct: 1
+            },
+            {
+                question: "ข้อใดเป็นตัวอย่างของคำซ้ำ?",
+                options: ["กระเป๋านักเรียน", "เด็กๆ", "ลิงโลด", "โรงพยาบาล"],
+                correct: 1
+            },
+            {
+                question: "'แสงแดด' เป็นคำประสมประเภทใด?",
+                options: ["ความหมายตรงตัว", "ความหมายใหม่", "เชิงวรรณกรรม", "คำซ้อน"],
+                correct: 2
+            },
+            {
+                question: "คำใดเป็นวลี?",
+                options: ["รถไฟฟ้า", "นักเรียน ดี", "โรงพยาบาล", "กระเป๋านักเรียน"],
+                correct: 1
+            },
+            {
+                question: "'รถพยาบาล' ประกอบจากคำใดบ้าง?",
+                options: ["รถ + พยาบาล", "รถ + โรงพยาบาล", "รถไฟ + พยาบาล", "รถ + หมอ"],
+                correct: 0
+            },
+            {
+                question: "คำประสมต้องเขียนอย่างไร?",
+                options: ["เขียนแยกกัน", "เขียนติดกัน", "เขียนด้วยเครื่องหมาย", "เขียนด้วยตัวเอียง"],
+                correct: 1
+            },
+            {
+                question: "'ลิงโลด' เป็นคำประเภทใด?",
+                options: ["คำประสม", "คำซ้ำ", "คำซ้อน", "วลี"],
+                correct: 2
+            },
+            {
+                question: "'โต๊ะอาหาร' มีความหมายว่าอะไร?",
+                options: ["โต๊ะที่ทำจากอาหาร", "โต๊ะสำหรับวางอาหาร", "อาหารบนโต๊ะ", "โต๊ะสีอาหาร"],
+                correct: 1
+            },
+            {
+                question: "คำใดเป็นคำประสมที่มีความหมายใหม่?",
+                options: ["ห้องเรียน", "ใจดำ", "โต๊ะอาหาร", "กระเป๋านักเรียน"],
+                correct: 1
+            },
+            {
+                question: "'น้ำแข็ง' เป็นคำประสมประเภทใด?",
+                options: ["ความหมายตรงตัว", "ความหมายใหม่", "เชิงวรรณกรรม", "คำซ้อน"],
+                correct: 0
+            },
+            {
+                question: "คำใดไม่ใช่คำซ้อน?",
+                options: ["ลิงโลด", "เซ็งแซ่", "ปั่นป่วน", "โรงพยาบาล"],
+                correct: 3
+            },
+            {
+                question: "'ลมหายใจ' เป็นคำประสมประเภทใด?",
+                options: ["ความหมายตรงตัว", "ความหมายใหม่", "เชิงวรรณกรรม", "คำซ้ำ"],
+                correct: 2
+            },
+            {
+                question: "คำประสมที่มีความหมายตรงตัวคือ?",
+                options: ["ใจดำ", "หน้าไฟ", "ห้องเรียน", "แสงแดด"],
+                correct: 2
+            },
+            {
+                question: "'เสื้อผ้า' หมายถึงอะไร?",
+                options: ["เสื้อที่ทำจากผ้า", "เครื่องแต่งกาย", "ผ้าสำหรับทำเสื้อ", "เสื้อสีผ้า"],
+                correct: 1
+            },
+            {
+                question: "คำใดเป็นตัวอย่างของคำประสมในชีวิตประจำวัน?",
+                options: ["เด็กๆ", "ลิงโลด", "บ้านเรือน", "ช้าๆ"],
+                correct: 2
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let quizScore = 0;
+        let selectedAnswer = null;
+
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            quizScore = 0;
+            selectedAnswer = null;
+            document.getElementById('startBtn').classList.add('hidden');
+            document.getElementById('nextBtn').classList.remove('hidden');
+            document.getElementById('quizResult').classList.add('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestionIndex];
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            document.getElementById('score').textContent = quizScore;
+            document.getElementById('progressBar').style.width = ((currentQuestionIndex + 1) / 20) * 100 + '%';
+            
+            document.getElementById('questionText').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option bg-gray-100 p-4 rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-300';
+                optionDiv.textContent = `${index + 1}. ${option}`;
+                optionDiv.onclick = () => selectAnswer(index, optionDiv);
+                optionsContainer.appendChild(optionDiv);
+            });
+            
+            selectedAnswer = null;
+        }
+
+        function selectAnswer(answerIndex, element) {
+            // Remove previous selection
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('bg-blue-200', 'border-blue-500');
+                opt.classList.add('bg-gray-100');
+            });
+            
+            // Highlight selected answer
+            element.classList.remove('bg-gray-100');
+            element.classList.add('bg-blue-200', 'border-blue-500');
+            selectedAnswer = answerIndex;
+        }
+
+        function nextQuestion() {
+            if (selectedAnswer === null) {
+                alert('กรุณาเลือกคำตอบก่อน');
+                return;
+            }
+            
+            const question = quizQuestions[currentQuestionIndex];
+            const isCorrect = selectedAnswer === question.correct;
+            
+            // Show correct answer
+            document.querySelectorAll('.quiz-option').forEach((opt, index) => {
+                if (index === question.correct) {
+                    opt.classList.add('correct');
+                    opt.classList.remove('bg-gray-100', 'bg-blue-200');
+                } else if (index === selectedAnswer && !isCorrect) {
+                    opt.classList.add('incorrect');
+                    opt.classList.remove('bg-gray-100', 'bg-blue-200');
+                }
+            });
+            
+            if (isCorrect) {
+                quizScore++;
+            }
+            
+            setTimeout(() => {
+                currentQuestionIndex++;
+                
+                if (currentQuestionIndex >= quizQuestions.length) {
+                    showQuizResult();
+                } else {
+                    showQuestion();
+                }
+            }, 1500);
+        }
+
+        function showQuizResult() {
+            document.getElementById('nextBtn').classList.add('hidden');
+            document.getElementById('startBtn').classList.remove('hidden');
+            document.getElementById('startBtn').textContent = 'ทำแบบทดสอบใหม่';
+            
+            const percentage = Math.round((quizScore / quizQuestions.length) * 100);
+            let grade, message, color;
+            
+            if (percentage >= 90) {
+                grade = 'A';
+                message = 'ยอดเยี่ยม! คุณเข้าใจคำประสมเป็นอย่างดี 🏆';
+                color = 'green';
+            } else if (percentage >= 80) {
+                grade = 'B+';
+                message = 'ดีมาก! คุณมีความรู้เรื่องคำประสมในระดับดี 🌟';
+                color = 'blue';
+            } else if (percentage >= 70) {
+                grade = 'B';
+                message = 'ดี! คุณเข้าใจพื้นฐานคำประสมแล้ว 👍';
+                color = 'indigo';
+            } else if (percentage >= 60) {
+                grade = 'C+';
+                message = 'พอใช้ ควรทบทวนเพิ่มเติม 📚';
+                color = 'yellow';
+            } else {
+                grade = 'C';
+                message = 'ควรศึกษาเพิ่มเติมเรื่องคำประสม 💪';
+                color = 'red';
+            }
+            
+            document.getElementById('quizResult').innerHTML = `
+                <div class="bg-${color}-100 border border-${color}-400 text-${color}-700 px-6 py-4 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-2">ผลการทดสอบ</h3>
+                    <div class="text-4xl font-bold mb-2">คะแนน: ${quizScore}/${quizQuestions.length} (${percentage}%)</div>
+                    <div class="text-2xl font-bold mb-2">เกรด: ${grade}</div>
+                    <p class="text-lg">${message}</p>
+                </div>
+            `;
+            document.getElementById('quizResult').classList.remove('hidden');
+        }
+
+
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('word-formation');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9673d17fa7a3894d',t:'MTc1Mzg2NzYyNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
